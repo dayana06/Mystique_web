@@ -1,0 +1,37 @@
+<div class="space-medium">
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m6">
+        <div>
+          <h2>Estilistas</h2>
+        </div>
+        <div class="row" style="margin-top: 50px;">
+          <ng-container *ngFor="let employee of employeeList">
+            <div *ngIf="employee?.estatus == 'A'" class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+              <div class="team-block mb30">
+                <figure class="imghvr-fade">
+                  <div class="team-img">
+                    <img src="http://localhost:3000/files/empleado/{{employee?.id}}.{{employee?.imagen}}" class="img-responsive" alt="">
+                  </div>
+                  <figcaption>
+                    <div class="team-info">
+                      <h2 class="team-name">{{employee?.nombre}} {{employee?.apellido}}</h2>
+                      <div *ngFor="let specialty of employeesSpecialist">
+                        <ng-container *ngFor="let category of employeesServiceCategory">
+                          <ng-container *ngIf="specialty?.id_empleado == employee?.id && specialty?.id_categoria_servicio == category?.id">
+                            <h6 class="team-meta">{{category?.nombre}}</h6>
+                          </ng-container>
+                        </ng-container>
+                      </div>
+                      <h6 class="team-meta">{{employee?.direccion}}</h6>
+                      <h6 class="team-meta">{{employee?.telefono}}</h6>
+                    </div>
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,42 @@
+<div class="space-medium ">
+  <div class="container">
+    <div class="row">
+      <ng-container *ngFor="let item of employeesDataTitle">
+        <div *ngIf="item?.visible && item?.tipo_seccion == 'employee'" class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+          <div class="section-title">
+            <h1 class="heading-line">{{item?.titulo}}</h1>
+            <p class="mb40">{{item?.descripcion}}</p>
+            <a routerLink="/employeeList" routerLinkActive="active" class="btn btn-blue">{{item?.boton}}</a>
+          </div>
+        </div>
+      </ng-container>
+      <div class="col-lg-offest-1 col-lg-8 col-md-offset-1 col-md-8 col-sm-12 col-xs-12">
+        <div class="row">
+          <ng-container *ngFor="let employee of employeesCards">
+            <div *ngIf="employee?.visible == true" class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <div class="team-block mb30">
+                <figure class="imghvr-fade">
+                  <div class="team-img">
+                    <img src="http://localhost:3000/files/empleado/{{employee?.id}}.{{employee?.imagen}}" class="img-responsive" alt="">
+                  </div>
+                  <figcaption>
+                    <div class="team-info">
+                      <h2 class="team-name">{{employee?.nombre}} {{employee?.apellido}}</h2>
+                      <div *ngFor="let specialty of employeesSpecialist">
+                        <ng-container *ngFor="let category of employeesServiceCategory">
+                          <ng-container *ngIf="specialty?.id_empleado == employee?.id && specialty?.id_categoria_servicio == category?.id">
+                            <h6 class="team-meta">{{category?.nombre}}</h6>
+                          </ng-container>
+                        </ng-container>
+                      </div>
+                    </div>
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

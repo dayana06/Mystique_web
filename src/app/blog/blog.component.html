@@ -1,0 +1,37 @@
+<div class="space-medium bg-light">
+  <div class="container">
+    <div class="row">
+      <ng-container *ngFor="let item of blogDataTitle">
+        <div *ngIf="item?.visible && item?.tipo_seccion == 'tip'" class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+          <div class="mt20">
+            <div class="section-title">
+              <h1 class="heading-line">{{item?.titulo}}</h1>
+              <p class="mb40">{{item?.descripcion}}</p>
+              <a routerLink="/tips" routerLinkActive="active" class="btn btn-blue">{{item?.boton}}</a>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+      <div class="col-lg-8">
+        <div class="row">
+          <ng-container *ngFor="let blogDataCard of blogDataCards">
+            <div *ngIf="blogDataCard?.visible == true" class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <div class="post-holder outline bg-white pinside40 mb30">
+                <div class="post-content">
+                  <h1 class="heading-line post-title">
+                    <a class="title">{{blogDataCard?.titulo}}</a>
+                  </h1>
+                  <div class="meta">
+                    <span class="meta-date">{{blogDataCard?.fecha_creacion | date:'d/MM/y'}}</span>
+                  </div>
+                  <p class="truncate">{{blogDataCard?.descripcion}}</p>
+                  <a routerLink="/tipDetail" routerLinkActive="active" (click)="seeDetail(blogDataCard)" class="btn-link">Leer más</a>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

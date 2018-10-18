@@ -1,0 +1,21 @@
+<ng-container *ngIf="showHero">
+  <app-hero></app-hero>
+</ng-container>
+<ng-container *ngIf="showServices">
+  <app-servicespanel></app-servicespanel>
+</ng-container>
+<ng-container *ngIf="showPromo">
+  <app-promo></app-promo>
+</ng-container>
+<ng-container *ngIf="showBlog">
+<app-blog></app-blog>
+</ng-container>
+<ng-container *ngIf="showEmployees">
+<app-employees></app-employees>
+</ng-container>
+<ng-container *ngIf="showTwitter && showTimeline">
+<app-twittertimeline></app-twittertimeline>
+</ng-container>
+<footer>
+  <app-footer></app-footer>
+</footer>

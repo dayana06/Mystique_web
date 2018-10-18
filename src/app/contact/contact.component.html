@@ -1,0 +1,83 @@
+<div class="space-medium" style=" background-image: url('assets/contact.jpg'); background-repeat: no-repeat; background-position: top center; min-width: 1024px; background-size: cover; max-height: 450px;">
+  <div class="container" style="margin-top: 150px;">
+    <div class="row">
+      <div class="col-lg-8 col offset-l3">
+        <ul class="collection with-header" style="width: 700px; margin-top: 180px;">
+          <li class="collection-header">
+            <ng-container *ngFor="let item of businessTitle">
+              <div *ngIf="item?.tipo_seccion == 'contact'">
+                <h4>{{item?.titulo}}</h4>
+                <p style="margin-top: 30px;">{{item?.descripcion}}</p>
+              </div>
+            </ng-container>
+          </li>
+          <li class="collection-item">
+            <div class="row valign-wrapper">
+              <div class="col-md-1">
+                <i class="material-icons" style="color: #FD0087;">business</i>
+              </div>
+              <div class="col-md-11">{{bussinessData?.nombre}}</div>
+            </div>
+          </li>
+          <li class="collection-item">
+            <div class="row valign-wrapper">
+              <div class="col-md-1">
+                <i class="material-icons" style="color: #FD0087;">lightbulb_outline</i>
+              </div>
+              <ng-container *ngFor="let item of businessGoals">
+                <div style="margin-top: 15px;" *ngIf="item?.visible" class="col-md-11">
+                  <b>{{item?.titulo == 'general' ? 'Objetivo General' : 'Objetivo Especifico'}}:</b> {{item?.descripcion}}</div>
+              </ng-container>
+              <ng-container *ngFor="let item of bussinessDescription">
+                <div style="margin-top: 15px;" *ngIf="item?.visible && item?.tipo_descripcion =='mision'" class="col-md-11">
+                  <b>{{item?.titulo}}:</b> {{item?.descripcion}}</div>
+                <div style="margin-top: 15px;" *ngIf="item?.visible && item?.tipo_descripcion =='vision'" class="col-md-11">
+                  <b>{{item?.titulo}}:</b> {{item?.descripcion}}</div>
+                <div style="margin-top: 15px;" *ngIf="item?.visible && item?.tipo_descripcion =='descripcion'" class="col-md-11">
+                  <b>{{item?.titulo}}:</b> {{item?.descripcion}}</div>
+              </ng-container>
+            </div>
+          </li>
+          <ng-container *ngFor="let item of businessContact">
+            <li *ngIf="item?.visible && item?.tipo_contacto == 'direccion'" class="collection-item">
+              <div class="row valign-wrapper">
+                <div class="col-md-1">
+                  <i class="material-icons" style="color: #FD0087;">location_on</i>
+                </div>
+                <div class="col-md-11">{{item?.descripcion}}</div>
+              </div>
+            </li>
+          </ng-container>
+          <ng-container *ngFor="let item of businessContact">
+            <li *ngIf="item?.visible && item?.tipo_contacto == 'telefono'" class="collection-item">
+              <div class="row valign-wrapper">
+                <div class="col-md-1">
+                  <i class="material-icons" style="color: #FD0087;">phone</i>
+                </div>
+                <div class="col-md-11">{{item?.descripcion}}</div>
+              </div>
+            </li>
+          </ng-container>
+          <li class="collection-item">
+            <div class="row valign-wrapper">
+              <div class="col-md-1">
+                <i class="material-icons" style="color: #FD0087;">schedule</i>
+              </div>
+              <div class="col-md-11">{{businessStartHour}} - {{businessEndHour}}</div>
+            </div>
+          </li>
+          <ng-container *ngFor="let item of businessContact">
+            <li *ngIf="item?.visible && item?.tipo_contacto == 'correo'" class="collection-item">
+              <div class="row valign-wrapper">
+                <div class="col-md-1">
+                  <i class="material-icons" style="color: #FD0087;">mail</i>
+                </div>
+                <div class="col-md-11">{{item?.descripcion}}</div>
+              </div>
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

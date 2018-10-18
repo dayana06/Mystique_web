@@ -1,0 +1,31 @@
+<div class="space-medium">
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m6">
+        <ng-container *ngFor="let item of portfolioTitle">
+          <div *ngIf="item?.tipo_seccion == 'portfolio'">
+            <h4>{{item?.titulo}}</h4>
+            <p style="margin-top: 30px;">{{item?.descripcion}}</p>
+          </div>
+        </ng-container>
+        <div class="row" style="margin-top: 50px;">
+          <ng-container *ngFor="let item of portfolioImage">
+            <div *ngIf="item?.tipo_imagen == 'portfolio' && item?.estatus == 'A'" class="col-lg-4">
+              <div>
+                <div style="text-align: center;">
+                  <img style="height: 300px; width: 300px;" src="http://localhost:3000/files/imagen/{{item?.id}}.{{item?.imagen}}">
+                </div>
+                <div class="row" style="margin-top:20px;">
+                  <div class="col-lg-12">
+                    <h5>{{item?.titulo}}</h5>
+                    <p style="font-family: Roboto;">{{item?.descripcion}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

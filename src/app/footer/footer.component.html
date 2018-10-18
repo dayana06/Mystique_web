@@ -1,0 +1,91 @@
+<div class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+        <div class="footer-widget pinside30 mb30">
+          <div class="logo">
+            <img src="http://localhost:3000/files/sistema/{{systemInfo?.id}}.{{systemInfo?.imagen}}" class="img-responsive" alt="systemInfo?.nombre"> </div>
+          <div class="row" style="margin-left: -5px; ">
+            <div class="col-md-10" style="margin-top: -40px;">
+              <h4 class="call-no">
+                <a style="color: #8B949B;font-family: Roboto;font-size: 10px;line-height: 10px; margin-left: -20p" href="">{{systemInfo?.nombre}} 2018</a>
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-offset-1 col-lg-5 col-md-offset-1 col-md-5 col-sm-6 col-xs-12">
+        <div class="footer-widget footer-contact">
+          <h2 class="footer-title">Información de contacto</h2>
+          <ul class="listnone">
+            <li>
+              <div class="row valign-wrapper">
+                <div class="col-md-1">
+                  <i class="material-icons">local_phone</i>
+                </div>
+                <ng-container *ngFor="let item of businessContact">
+                  <div *ngIf="item?.tipo_contacto == 'telefono'" class="col-md-11">
+                    <h4 class="call-no" style="font-weight: normal; font-family: Roboto;">
+                      <a>{{item?.descripcion}}</a>
+                    </h4>
+                  </div>
+                </ng-container>
+              </div>
+            </li>
+            <li>
+              <div class="row valign-wrapper">
+                <div class="col-md-1">
+                  <i class="material-icons">email</i>
+                </div>
+                <ng-container *ngFor="let item of businessContact">
+                  <div *ngIf="item?.tipo_contacto == 'correo'" class="col-md-11">
+                    <h4 class="mail-text" style="font-family: Roboto;">
+                      <a>{{item?.descripcion}}</a>
+                    </h4>
+                  </div>
+                </ng-container>
+              </div>
+            </li>
+            <li>
+              <div class="row valign-wrapper">
+                <div class="col-md-1">
+                  <i class="material-icons">watch_later</i>
+                </div>
+                <div class="col-md-11">
+                  <h4 class="time-text" style="font-family: Roboto;">
+                    <a>{{businessStartHour}} - {{businessEndHour}}</a>
+                  </h4>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-offset-1 col-lg-3 col-md-offset-1 col-md-3 col-sm-6 col-xs-12">
+        <div class="footer-widget">
+          <h2 class="footer-title">Enlaces</h2>
+          <ul class="listnone">
+            <li>
+              <a routerLink="/serviceList" routerLinkActive="active">Servicios</a>
+            </li>
+            <li>
+              <a routerLink="/promos" routerLinkActive="active">Promociones</a>
+            </li>
+            <li>
+              <a routerLink="/tips" routerLinkActive="active">Blog</a>
+            </li>
+            <li>
+              <a routerLink="/employeeList" routerLinkActive="active">Estilistas</a>
+            </li>
+            <li>
+              <a routerLink="/contact" routerLinkActive="active">Empresa</a>
+            </li>
+            <li>
+              <a routerLink="/portfolio" routerLinkActive="active">Galería</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

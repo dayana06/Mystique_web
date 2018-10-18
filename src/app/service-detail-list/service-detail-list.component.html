@@ -1,0 +1,40 @@
+<div class="space-medium">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 valign-wrapper" text-left>
+        <a routerLink="/serviceList" routerLinkActive="active" class="btn btn-grey" style="color: #000;">
+          <i class="material-icons left">chevron_left</i>Volver</a>
+      </div>
+      <div class="col s12 m6">
+        <div>
+          <h2>Servicios</h2>
+        </div>
+        <div class="row" style="margin-top: 50px;">
+          <ng-container *ngFor="let serviceKind of serviceKindList">
+            <ng-container *ngFor="let service of serviceList">
+              <div *ngIf="serviceKind?.id_categoria_servicio == categoryToSearch && service?.id_tipo_servicio == serviceKind?.id &&  service?.visible == true" class="col-lg-6">
+                <div class="card">
+                  <div class="card-image">
+                    <img style="height: 300px;" src="http://localhost:3000/files/servicio/{{service?.id}}.{{service?.imagen}}">
+                  </div>
+                  <div class="card-content">
+                    <span class="card-title" id="titulo">
+                      <h4>{{service?.nombre}}</h4>
+                      <h6 style="color: #FD0087; text-align: right;">{{serviceKind?.nombre}}</h6>
+                    </span>
+                    <div>
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <p style="font-family: Roboto;">{{service?.descripcion}}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ng-container>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,39 @@
+<div class="space-medium">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 valign-wrapper" text-left>
+        <a routerLink="/tips" routerLinkActive="active" class="btn btn-grey" style="color: #000;">
+          <i class="material-icons left">chevron_left</i>Volver</a>
+      </div>
+      <div class="col l8 offset-l1">
+        <div>
+          <h2>{{blogDetail?.titulo}}</h2>
+        </div>
+        <div class="card white darken-1" style="width: 950px; margin-top: 50px;">
+          <div class="card-image">
+            <img src="http://localhost:3000/files/consejo/{{blogDetail?.id}}.{{blogDetail?.imagen}}">
+          </div>
+          <div class="card-content" style="width: 950px;">
+            <div class="row">
+              <div class="col-lg-3">
+                <div class="meta">
+                  <span class="meta-date" style="margin-top:20px;">{{blogDetail?.fecha_creacion | date:'d/MM/y'}}</span>
+                </div>
+              </div>
+              <div class="col-lg-3">
+                <div class="meta">
+                  <span class="meta-date" style="margin-top:20px;">{{blogDetail?.autor}}</span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p style="font-family: Roboto;">
+                {{blogDetail?.descripcion}}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

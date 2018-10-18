@@ -1,0 +1,22 @@
+<div class="space-medium bg-light">
+  <div class="container">
+    <div class="row">
+      <ng-container *ngFor="let item of twitterDataTitle">
+        <div *ngIf="item?.visible && item?.tipo_seccion == 'twitter'" class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+          <div class="mt20">
+            <div class="section-title">
+              <h1 class="heading-line">{{item?.titulo}}</h1>
+              <p class="mb40">{{item?.descripcion}}</p>
+              <!-- <a href= class="btn btn-blue">{{item?.boton}}</a>-->
+            </div>
+          </div>
+        </div>
+      </ng-container>
+      <ng-container *ngFor="let socialNet of twitterTimeline">
+        <div *ngIf="socialNet?.nombre == 'twitter'" class="col-lg-offest-1 col-lg-8 col-md-offset-1 col-md-8 col-sm-12 col-xs-12">
+          <ng4-twitter-timeline [dataSrc]="{sourceType: 'profile',screenName: socialNet?.url}" [opts]="{chrome: 'noheader nofooter noborders transparent', height: 600}"></ng4-twitter-timeline>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>

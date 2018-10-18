@@ -1,0 +1,37 @@
+<div class="space-medium">
+  <div class="container">
+    <div class="row">
+      <ng-container *ngFor="let item of promoDataTitle">
+        <div *ngIf="item?.visible && item?.tipo_seccion == 'promo'" class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+          <div class="mt20">
+            <div class="section-title">
+              <h1 class="heading-line">{{item?.titulo}}</h1>
+              <p class="mb40">{{item?.descripcion}}</p>
+              <a routerLink="/promos" routerLinkActive="active" class="btn btn-blue">{{item?.boton}}</a>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+      <div class="col-lg-offest-1 col-lg-8 col-md-offset-1 col-md-8 col-sm-12 col-xs-12">
+        <div class="row">
+          <ng-container *ngFor="let promo of promoDataCards" >
+            <div *ngIf="promo?.visible == true" class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+
+              <div class="price-block outline mb30 bg-white">
+                <div class="price-img">
+                  <img src="http://localhost:3000/files/promocion/{{promo?.id}}.{{promo?.imagen}}" class="img-responsive" alt="">
+                </div>
+                <div class="price-content pinside30">
+                  <h2 class="heading-line mb10" style="font-family: Abril Fatface; font-size: 24px;">{{promo?.nombre}}</h2>
+                  <p class="mb30">{{promo?.descripcion}}</p>
+                </div>
+              </div>
+
+            </div>
+          </ng-container>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

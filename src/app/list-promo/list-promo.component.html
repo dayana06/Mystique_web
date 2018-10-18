@@ -1,0 +1,53 @@
+<div class="space-medium" style=" background-image: url('assets/portfolio.jpg'); background-repeat: no-repeat; background-position: top center; min-width: 1024px; background-size: cover; max-height: 450px;">
+  <div class="container" style="margin-top: 150px;">
+    <div class="row" style="margin-top: 300px;">
+      <div class="col s12 m6">
+        <div class="card white darken-1">
+          <div class="card-content">
+            <span class="card-title">
+              <h4>Promociones</h4>
+            </span>
+            <ng-container *ngFor="let item of promoTitle">
+              <p *ngIf="item?.tipo_seccion == 'promo'" style="margin-top: 30px;">{{item?.descripcion}}</p>
+            </ng-container>
+            <div class="row" style="margin-top: 50px;">
+              <div *ngFor="let promo of promoList" class="col-lg-6">
+                <div class="card">
+                  <div class="card-image">
+                    <img style="height: 300px;" src="http://localhost:3000/files/promocion/{{promo?.id}}.{{promo?.imagen}}">
+                  </div>
+                  <div class="card-content">
+                    <span class="card-title" id="titulo">
+                      <h4>{{promo?.nombre}}</h4>
+                      <h5 style="color: #FD0087; font-weight: bold; text-transform: uppercase; text-align: right; margin-top: 20px; ">{{promo?.porcentaje_descuento}}% de descuento!</h5>
+                    </span>
+                    <div style="margin-top: 20px; margin-left: 1px;" class="row">
+                      <p style="color:#2F4AE4; font-family: Roboto;">Desde: {{promo?.fecha_inicio | date:'d/MM/y'}} - </p>
+                      <p style="color:#2F4AE4; font-family: Roboto;">&nbsp; Hasta: {{promo?.fecha_fin | date:'d/MM/y'}}</p>
+                    </div>
+                    <div>
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <p style="font-family: Roboto;">{{promo?.descripcion}}</p>
+                        </div>
+                      </div>
+                      <div style="margin-top:30px;" class="row">
+                        <ng-container *ngFor="let service of serviceList">
+                          <div *ngIf="service?.id == promo?.id_servicio" class="col-md-8 valign-wrapper">
+                            <p style="font-family: Roboto;">{{service?.nombre}}</p>
+                          </div>
+                        </ng-container>
+                        <div class="col-md-4 text-right">
+                          <span class="meta-price">Bs. {{promo?.precio_promocion | number:'.2'}}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

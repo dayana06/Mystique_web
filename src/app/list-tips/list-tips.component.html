@@ -1,0 +1,61 @@
+<div class="space-medium">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col offset-l1">
+        <div>
+          <h2>Consejos</h2>
+        </div>
+        <div class="card white darken-1" *ngFor="let item of tipList" style="width: 950px; margin-top: 50px;">
+          <div class="card-content" style="width: 950px;">
+            <span class="card-title" id="titulo">
+              <h4>{{item?.titulo}}</h4>
+            </span>
+            <div class="row" style="margin-top:20px; margin-left:1px;">
+              <div class="meta">
+                <span class="meta-date">{{item?.fecha_creacion | date:'d/MM/y'}}</span>
+              </div>
+              <div class="meta">
+                <span class="meta-date">{{item?.autor}}</span>
+              </div>
+            </div>
+            <div>
+              <p style="font-family: Roboto;" class="truncate">{{item?.descripcion}}</p>
+            </div>
+            <div style="margin-top:20px;">
+              <a routerLink="/tipDetail" routerLinkActive="active" class="btn-link" (click)="seeDetail(item)">Leer más</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <ul class="pagination">
+            <li class="disabled">
+              <a>
+                <i class="material-icons">chevron_left</i>
+              </a>
+            </li>
+            <li class="active">
+              <a>1</a>
+            </li>
+            <li class="waves-effect">
+              <a>2</a>
+            </li>
+            <li class="waves-effect">
+              <a>3</a>
+            </li>
+            <li class="waves-effect">
+              <a>4</a>
+            </li>
+            <li class="waves-effect">
+              <a>5</a>
+            </li>
+            <li class="waves-effect">
+              <a>
+                <i class="material-icons">chevron_right</i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

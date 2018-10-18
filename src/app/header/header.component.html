@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row" style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; ">
+    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+      <div class="logo">
+        <a routerLink="/" routerLinkActive="active">
+          <img src="http://localhost:3000/files/negocio/{{bussinessData?.id}}.{{bussinessData?.imagen}}" [alt]="bussinessData?.nombre">
+        </a>
+      </div>
+    </div>
+    <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+      <div class="row" style="margin-top: 15px;">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
+          <div class="call-block">
+            <p class="call-text">La mas cordial bienvenida por parte del equipo de</p>
+            <h3 class="call-no" style="font-family: Abril Fatface; color: #344563;">{{bussinessData?.nombre}}</h3>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
+          <div class="call-block">
+            <p class="call-text">Horario</p>
+            <h3 class="call-no" style="font-family: Abril Fatface; color: #344563;">{{businessStartHour}} - {{businessEndHour}}</h3>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-3 col-xs-12 valign-wrapper" style="padding-left: 90px;">
+          <div class="right-align">
+            <a routerLink="/signup" routerLinkActive="active" class="btn btn-default">SUBSCRÍBETE</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
